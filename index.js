@@ -3,6 +3,8 @@
  */
 'use strict';
 
+let Promise = global.Promise;
+
 const GeTui = require('./vanilla/GT.push');
 
 const SYNC_METHOD = ['inspect', 'getBatch'];
@@ -16,13 +18,13 @@ METHODS.forEach((methodName) => {
   const method = GeTui.prototype[methodName];
   GeTui.prototype[methodName] = function () {
     const that = this;
-    const arg = [...arguments];
+    const args = [...arguments];
     return new Promise((resolve, reject) => {
-      arg.push(function (err, res) {
+      args.push(function (err, res) {
         if (err) return reject(err);
         return resolve(res);
       });
-      return method.apply(that, arguments);
+      return method.apply(that, args);
     })
   }
 });
@@ -51,3 +53,9 @@ exports.SimpleAlertMsg = require('./vanilla/payload/SimpleAlertMsg');
 
 exports.PushType = require('./vanilla/getui/PushType');
 exports.Target = require('./vanilla/getui/Target');
+
+Object.defineProperty(exports, 'Promise', {
+  set: function (value) {
+    Promise = value;
+  }
+});

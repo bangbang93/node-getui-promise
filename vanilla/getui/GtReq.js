@@ -1,4 +1,4 @@
-module.exports = require("protobufjs").Root.fromJSON({
+module.exports = require("protobufjs").newBuilder({})["import"]({
     "package": "GtReq",
     "messages": [
         {
@@ -1579,4 +1579,4 @@ module.exports = require("protobufjs").Root.fromJSON({
         "optimize_for": "SPEED"
     },
     "services": []
-});
+}).build("GtReq");
