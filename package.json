@@ -1,0 +1,28 @@
+{
+  "name": "getui-promise",
+  "version": "0.0.1",
+  "description": "getui promise wrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bangbang93/node-getui-promise.git"
+  },
+  "keywords": [
+    "getui"
+  ],
+  "author": "bangbang93",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bangbang93/node-getui-promise/issues"
+  },
+  "homepage": "https://github.com/bangbang93/node-getui-promise#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "protobufjs": "^6.8.0",
+    "request": "^2.81.0",
+    "zlib": "^1.0.5"
+  }
+}
